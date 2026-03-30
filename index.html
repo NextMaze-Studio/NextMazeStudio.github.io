@@ -25,14 +25,8 @@
             z-index: -1; filter: blur(100px); opacity: 0.6;
         }
         .text-hero { letter-spacing: -0.06em; line-height: 0.9; }
-        .accent-green { color: #22c55e; }
+        .accent-green { color: #22c55e; } /* Matching your logo's green */
         .bg-accent-green { background-color: #22c55e; }
-
-        /* Tech Scroller Animation */
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .logos-slide { display: flex; width: max-content; animation: scroll 30s linear infinite; }
-        .tech-logo { height: 35px; filter: grayscale(1) brightness(0.6); opacity: 0.5; transition: 0.4s; }
-        .tech-logo:hover { filter: grayscale(0) brightness(1); opacity: 1; transform: scale(1.1); }
     </style>
 </head>
 <body class="antialiased">
@@ -41,8 +35,8 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 top-0 bg-black/40 backdrop-blur-2xl border-b border-white/5 py-4 px-8 flex justify-between items-center">
         <div class="flex items-center gap-4">
-            <!-- CSS Logo Replacement -->
-            <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center font-black text-black text-[11px]">NM</div>
+            <!-- PASTE YOUR LOGO URL IN THE SRC BELOW -->
+            <img src="REPLACE_WITH_DIRECT_LOGO_URL" alt="" class="h-8 md:h-10 object-contain">
             <span class="font-black text-xl tracking-tighter uppercase hidden sm:block">NextMaze <span class="font-light opacity-40">Studio</span></span>
         </div>
         <a href="https://discord.gg" target="_blank" class="bg-white text-black px-6 py-2 rounded-full text-[11px] font-bold hover:scale-105 transition">GET STARTED</a>
@@ -89,7 +83,7 @@
         <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-20">
             <div class="flex-1 text-left">
                 <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-tight">📢 NextMaze <br><span class="opacity-30">Ad Network.</span></h2>
-                <p class="text-xl text-zinc-400 mb-8 leading-relaxed">We operate a unique Freemium Bot Network. Our bots stay 100% free for users, powered by strategic brand growth for advertisers.</p>
+                <p class="text-xl text-zinc-400 mb-8">We operate a unique Freemium Bot Network. Our bots stay 100% free for users, powered by strategic brand growth for advertisers.</p>
                 <div class="space-y-4 accent-green font-bold tracking-widest text-[10px] uppercase">
                     <p>• Embed Footer Placements (Every Song Played)</p>
                     <p>• Global Network Broadcasts (Scheduled)</p>
@@ -98,43 +92,19 @@
             </div>
             <div class="flex-1 liquid-glass p-12 border-green-500/20 text-center">
                 <h3 class="text-2xl font-bold mb-6 italic">MazeCloud Music</h3>
-                <p class="text-zinc-500 mb-10 leading-relaxed">"Our bots, like <strong>MazeCloud Music</strong>, stay free forever, supported by our premium partners."</p>
+                <p class="text-zinc-500 mb-10">"Our bots, like <strong>MazeCloud Music</strong>, stay free forever, supported by our premium partners."</p>
                 <a href="https://discord.gg" target="_blank" class="block w-full py-5 bg-accent-green text-black rounded-2xl font-black text-lg hover:opacity-90 transition shadow-2xl shadow-green-500/20 uppercase tracking-widest">Book Ad Slots</a>
             </div>
         </div>
     </section>
 
-    <!-- Moving Tech Logos -->
-    <section class="py-24 overflow-hidden border-t border-white/5">
-        <p class="text-center text-[10px] font-bold tracking-[0.6em] uppercase opacity-20 mb-16">Engineered With</p>
-        <div class="logos-slide">
-            <div class="flex gap-28 px-14 items-center">
-                <img src="https://cdn.simpleicons.org" class="tech-logo" title="Python">
-                <img src="https://cdn.simpleicons.org" class="tech-logo" title="JavaScript">
-                <img src="https://cdn.simpleicons.org" class="tech-logo" title="C#">
-                <img src="https://cdn.simpleicons.org" class="tech-logo" title="Blender">
-                <img src="https://cdn.simpleicons.org" class="tech-logo" title="Node.js">
-                <img src="https://cdn.simpleicons.org" class="tech-logo" title="React">
-                <img src="https://cdn.simpleicons.org" class="tech-logo" title="VS Code">
-                <!-- Loop -->
-                <img src="https://cdn.simpleicons.org" class="tech-logo">
-                <img src="https://cdn.simpleicons.org" class="tech-logo">
-                <img src="https://cdn.simpleicons.org" class="tech-logo">
-                <img src="https://cdn.simpleicons.org" class="tech-logo">
-                <img src="https://cdn.simpleicons.org" class="tech-logo">
-                <img src="https://cdn.simpleicons.org" class="tech-logo">
-                <img src="https://cdn.simpleicons.org" class="tech-logo">
-            </div>
-        </div>
-    </section>
-
     <!-- Final Call to Action -->
-    <section class="py-40 px-8 text-center bg-black">
+    <section class="py-40 px-8 text-center">
         <h2 class="text-4xl md:text-7xl font-black tracking-tighter mb-10">Connect With Us.</h2>
         <div class="liquid-glass max-w-4xl mx-auto p-16 border-green-500/10">
             <h3 class="text-3xl font-bold mb-4">Official Discord Server</h3>
             <p class="text-zinc-500 text-lg mb-12">Place an order or join our community. Open a ticket in (🎨・create-order) to get started.</p>
-            <a href="https://discord.gg" target="_blank" class="px-16 py-6 bg-white text-black font-black text-xl rounded-full hover:scale-105 transition duration-500 shadow-2xl shadow-white/10 tracking-widest">JOIN COMMUNITY</a>
+            <a href="https://discord.gg" target="_blank" class="px-16 py-6 bg-white text-black font-black text-xl rounded-full hover:scale-105 transition duration-500 shadow-2xl shadow-white/10">JOIN COMMUNITY</a>
         </div>
     </section>
 
