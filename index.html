@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextMaze Studio | Digital Production House</title>
+    <title>NextMaze Studio | Official Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com');
@@ -10,13 +10,13 @@
         
         .liquid-glass {
             background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(30px) saturate(180%);
-            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 40px;
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .liquid-glass:hover { transform: scale(1.01); background: rgba(255, 255, 255, 0.05); border-color: rgba(50, 255, 50, 0.3); }
+        .liquid-glass:hover { transform: scale(1.01); background: rgba(255, 255, 255, 0.05); border-color: rgba(50, 255, 50, 0.4); }
 
         .mesh-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -25,8 +25,8 @@
             z-index: -1; filter: blur(100px); opacity: 0.6;
         }
         .text-hero { letter-spacing: -0.06em; line-height: 0.9; }
-        .accent-green { color: #32ff32; }
-        .bg-accent-green { background-color: #32ff32; }
+        .accent-green { color: #22c55e; } /* Matching your logo's green */
+        .bg-accent-green { background-color: #22c55e; }
     </style>
 </head>
 <body class="antialiased">
@@ -35,23 +35,23 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 top-0 bg-black/40 backdrop-blur-2xl border-b border-white/5 py-4 px-8 flex justify-between items-center">
         <div class="flex items-center gap-4">
-            <!-- Your Logo Integration -->
-            <img src="https://i.imgur.com" alt="NextMaze Logo" class="h-8 md:h-10 object-contain">
+            <!-- PASTE YOUR LOGO URL IN THE SRC BELOW -->
+            <img src="REPLACE_WITH_DIRECT_LOGO_URL" alt="NextMaze Logo" class="h-8 md:h-10 object-contain">
             <span class="font-black text-xl tracking-tighter uppercase hidden sm:block">NextMaze <span class="font-light opacity-40">Studio</span></span>
         </div>
-        <a href="https://discord.gg/HTE5rqbBzM" target="_blank" class="bg-white text-black px-6 py-2 rounded-full text-[11px] font-bold hover:scale-105 transition">GET STARTED</a>
+        <a href="https://discord.gg" target="_blank" class="bg-white text-black px-6 py-2 rounded-full text-[11px] font-bold hover:scale-105 transition">GET STARTED</a>
     </nav>
 
     <!-- Hero Section -->
     <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
-        <div class="inline-block px-4 py-1.5 liquid-glass rounded-full text-[10px] font-bold tracking-[0.4em] accent-green uppercase mb-8">Official Profile</div>
+        <div class="inline-block px-4 py-1.5 liquid-glass rounded-full text-[10px] font-bold tracking-[0.4em] accent-green uppercase mb-8">Official Production House</div>
         <h1 class="text-7xl md:text-[120px] font-black text-hero mb-8 text-white">Creativity meets <br><span class="text-zinc-700">Functionality.</span></h1>
         <p class="text-xl md:text-2xl text-zinc-400 max-w-3xl font-medium mb-12 leading-relaxed">
             NextMaze Studio is a professional digital production house bridging the gap between high-end engineering and stunning visual design.
         </p>
         <div class="flex flex-col md:flex-row gap-6 w-full max-w-lg justify-center">
             <a href="#expertise" class="px-10 py-4 bg-white text-black font-bold rounded-full hover:bg-zinc-200 transition">View Expertise</a>
-            <a href="https://discord.gg/HTE5rqbBzM" target="_blank" class="px-10 py-4 liquid-glass font-bold rounded-full hover:bg-white/5 transition">Join Discord</a>
+            <a href="https://discord.gg" target="_blank" class="px-10 py-4 liquid-glass font-bold rounded-full hover:bg-white/5 transition">Join Discord</a>
         </div>
     </section>
 
@@ -91,9 +91,9 @@
                 </div>
             </div>
             <div class="flex-1 liquid-glass p-12 border-green-500/20 text-center">
-                <h3 class="text-2xl font-bold mb-6">Reach Thousands Daily</h3>
-                <p class="text-zinc-500 mb-10 italic">"Our bots (like the NextMaze Music Bot) stay free forever, supported by our premium partners."</p>
-                <a href="https://discord.gg/HTE5rqbBzM" target="_blank" class="block w-full py-5 bg-accent-green text-black rounded-2xl font-black text-lg hover:opacity-90 transition shadow-2xl shadow-green-500/20 uppercase">Book Ad Slots</a>
+                <h3 class="text-2xl font-bold mb-6 italic">MazeCloud Music</h3>
+                <p class="text-zinc-500 mb-10">"Our bots, like <strong>MazeCloud Music</strong>, stay free forever, supported by our premium partners."</p>
+                <a href="https://discord.gg" target="_blank" class="block w-full py-5 bg-accent-green text-black rounded-2xl font-black text-lg hover:opacity-90 transition shadow-2xl shadow-green-500/20 uppercase tracking-widest">Book Ad Slots</a>
             </div>
         </div>
     </section>
@@ -104,7 +104,7 @@
         <div class="liquid-glass max-w-4xl mx-auto p-16 border-green-500/10">
             <h3 class="text-3xl font-bold mb-4">Official Discord Server</h3>
             <p class="text-zinc-500 text-lg mb-12">Place an order or join our community. Open a ticket in (🎨・create-order) to get started.</p>
-            <a href="https://discord.gg/HTE5rqbBzM" target="_blank" class="px-16 py-6 bg-white text-black font-black text-xl rounded-full hover:scale-105 transition duration-500 shadow-2xl shadow-white/10">JOIN COMMUNITY</a>
+            <a href="https://discord.gg" target="_blank" class="px-16 py-6 bg-white text-black font-black text-xl rounded-full hover:scale-105 transition duration-500 shadow-2xl shadow-white/10">JOIN COMMUNITY</a>
         </div>
     </section>
 
