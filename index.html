@@ -3,162 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextMaze Studio | Engineering x Design</title>
+    <title>NextMaze Studio | Professional Production</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com" />
     <style>
         @import url('https://fonts.googleapis.com');
         
-        body { font-family: 'Inter', sans-serif; background: #000; color: #fff; overflow-x: hidden; }
-        
-        /* The Apple "Liquid" Mesh Background */
-        .liquid-bg {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: 
-                radial-gradient(at 0% 0%, hsla(222,47%,11%,1) 0, transparent 50%), 
-                radial-gradient(at 100% 0%, hsla(280,40%,15%,1) 0, transparent 50%),
-                radial-gradient(at 50% 100%, hsla(200,50%,10%,1) 0, transparent 50%);
-            z-index: -1; filter: blur(80px);
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: #fff; 
+            color: #000; 
+            scroll-behavior: smooth; 
         }
 
-        /* High-End Glassmorphism */
-        .glass {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(25px) saturate(160%);
-            -webkit-backdrop-filter: blur(25px) saturate(160%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        /* The Classic Apple Blur */
+        .apple-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
         }
 
-        .text-gradient {
-            background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.5) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Large Product-Style Typography */
+        .hero-title {
+            letter-spacing: -0.05em;
+            line-height: 1.05;
         }
 
-        .btn-apple {
-            background: #fff; color: #000;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Glass Cards for Expertise */
+        .expertise-card {
+            background: #f5f5f7;
+            border-radius: 30px;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            overflow: hidden;
         }
-        .btn-apple:hover { transform: scale(1.05); background: #f0f0f0; box-shadow: 0 0 30px rgba(255,255,255,0.2); }
+        .expertise-card:hover {
+            transform: scale(1.02);
+        }
+
+        .btn-link {
+            color: #0066cc;
+            font-weight: 500;
+            font-size: 1.25rem;
+        }
+        .btn-link:hover { text-decoration: underline; }
     </style>
 </head>
-<body>
-    <div class="liquid-bg"></div>
+<body class="antialiased">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-[100] top-0 bg-black/40 backdrop-blur-xl border-b border-white/5 py-4 px-8">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-black text-xs">NM</div>
-                <span class="font-extrabold tracking-tighter text-xl">NextMaze <span class="font-light opacity-50">Studio</span></span>
+    <!-- Global Nav -->
+    <nav class="fixed w-full z-50 top-0 apple-nav border-b border-gray-200">
+        <div class="max-w-[1000px] mx-auto px-6 flex justify-between items-center h-12 text-[12px] font-normal tracking-tight">
+            <span class="font-bold text-lg">NextMaze</span>
+            <div class="space-x-8 opacity-80 hidden md:flex">
+                <a href="#expertise" class="hover:text-blue-600 transition">Expertise</a>
+                <a href="#ad-network" class="hover:text-blue-600 transition">Ad Network</a>
+                <a href="https://discord.gg" class="hover:text-blue-600 transition">Support</a>
             </div>
-            <div class="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.3em] font-bold opacity-60">
-                <a href="#expertise" class="hover:text-blue-400 transition">Expertise</a>
-                <a href="#ads" class="hover:text-blue-400 transition">Ad Network</a>
-                <a href="https://discord.gg" class="btn-apple text-black px-6 py-2 rounded-full normal-case tracking-normal">Join Community</a>
-            </div>
+            <a href="https://discord.gg" class="bg-black text-white px-3 py-1 rounded-full text-[11px] font-medium">Join</a>
         </div>
     </nav>
 
-    <!-- Hero: Cinematic Intro -->
-    <section class="relative h-screen flex flex-col items-center justify-center text-center px-6">
-        <div data-aos="fade-up" data-aos-duration="1000">
-            <span class="inline-block px-4 py-1 mb-8 glass rounded-full text-[10px] font-bold tracking-[0.3em] text-blue-400 uppercase">
-                Digital Production House 2026
-            </span>
-            <h1 class="text-7xl md:text-[140px] font-black tracking-tighter leading-[0.85] text-gradient mb-10">
-                NextMaze.
-            </h1>
-            <p class="text-xl md:text-2xl text-zinc-400 max-w-3xl font-light leading-relaxed mx-auto mb-12">
-                We bridge high-end engineering with stunning visual design. <br class="hidden md:block">
-                Professional solutions across the digital spectrum.
-            </p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="https://discord.gg" class="btn-apple px-12 py-5 rounded-full font-bold text-lg">Launch Project</a>
-                <a href="#expertise" class="glass px-12 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition">Explore Expertise</a>
-            </div>
+    <!-- Section 1: The Masterbrand -->
+    <section class="pt-32 pb-20 text-center px-6">
+        <h1 class="hero-title text-6xl md:text-[88px] font-bold mb-4">NextMaze Studio.</h1>
+        <p class="text-2xl md:text-3xl font-medium text-gray-500 mb-8 max-w-3xl mx-auto">
+            High-end engineering meets stunning visual design.
+        </p>
+        <div class="flex justify-center space-x-8 mb-12">
+            <a href="https://discord.gg" class="btn-link">Start a project ></a>
+            <a href="#expertise" class="btn-link">View expertise ></a>
+        </div>
+        <!-- High Quality Image Placeholder -->
+        <div class="max-w-5xl mx-auto px-4">
+             <img src="https://images.unsplash.com" 
+                  class="rounded-3xl shadow-2xl w-full">
         </div>
     </section>
 
-    <!-- Expertise Grid -->
-    <section id="expertise" class="py-40 px-8 max-w-7xl mx-auto">
+    <!-- Section 2: Core Expertise (The 2x2 Grid) -->
+    <section id="expertise" class="py-20 px-6 max-w-6xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Software -->
-            <div class="glass p-16 rounded-[40px] group overflow-hidden relative" data-aos="fade-up">
-                <div class="relative z-10">
-                    <h3 class="text-5xl font-black mb-6">Software.</h3>
-                    <p class="text-zinc-400 text-lg leading-relaxed">Custom Web Apps, Dev Tools, and intricate Install Guides. Engineering for the modern web.</p>
-                </div>
-                <div class="absolute -bottom-10 -right-10 text-[150px] opacity-[0.03] font-black group-hover:text-blue-500 group-hover:opacity-10 transition-all duration-700">WEB</div>
+            <div class="expertise-card p-12 flex flex-col items-center text-center">
+                <h2 class="text-4xl font-bold mb-4">Software.</h2>
+                <p class="text-xl text-gray-500 mb-6">Custom Web Apps, Dev Tools, and detailed Install Guides.</p>
+                <img src="https://images.unsplash.com" class="mt-auto rounded-xl shadow-lg w-full max-w-xs">
             </div>
 
             <!-- Automation -->
-            <div class="glass p-16 rounded-[40px] group overflow-hidden relative" data-aos="fade-up" data-aos-delay="100">
-                <div class="relative z-10">
-                    <h3 class="text-5xl font-black mb-6">Automation.</h3>
-                    <p class="text-zinc-400 text-lg leading-relaxed">Bespoke Discord & Telegram Bots. AI Development and Security Automations.</p>
-                </div>
-                <div class="absolute -bottom-10 -right-10 text-[150px] opacity-[0.03] font-black group-hover:text-purple-500 group-hover:opacity-10 transition-all duration-700">BOT</div>
+            <div class="expertise-card p-12 flex flex-col items-center text-center">
+                <h2 class="text-4xl font-bold mb-4">Automation.</h2>
+                <p class="text-xl text-gray-500 mb-6">Bespoke Discord & Telegram Bots. AI Development.</p>
+                <img src="https://images.unsplash.com" class="mt-auto rounded-xl shadow-lg w-full max-w-xs">
             </div>
 
             <!-- Creative -->
-            <div class="glass p-16 rounded-[40px] group overflow-hidden relative" data-aos="fade-up">
-                <div class="relative z-10">
-                    <h3 class="text-5xl font-black mb-6">Creative.</h3>
-                    <p class="text-zinc-400 text-lg leading-relaxed">High-CTR Thumbnails, Branding, and 3D Modeling. Visual dominance in every pixel.</p>
-                </div>
-                <div class="absolute -bottom-10 -right-10 text-[150px] opacity-[0.03] font-black group-hover:text-pink-500 group-hover:opacity-10 transition-all duration-700">GFX</div>
+            <div class="expertise-card p-12 flex flex-col items-center text-center">
+                <h2 class="text-4xl font-bold mb-4 text-black">Creative Design.</h2>
+                <p class="text-xl text-gray-500 mb-6">High-CTR Thumbnails, Branding, and 3D Modeling.</p>
+                <img src="https://images.unsplash.com" class="mt-auto rounded-xl shadow-lg w-full max-w-xs">
             </div>
 
             <!-- Hardware -->
-            <div class="glass p-16 rounded-[40px] group overflow-hidden relative" data-aos="fade-up" data-aos-delay="100">
-                <div class="relative z-10">
-                    <h3 class="text-5xl font-black mb-6">Hardware.</h3>
-                    <p class="text-zinc-400 text-lg leading-relaxed">Robotics and AI-integrated hardware solutions for specialized production needs.</p>
-                </div>
-                <div class="absolute -bottom-10 -right-10 text-[150px] opacity-[0.03] font-black group-hover:text-green-500 group-hover:opacity-10 transition-all duration-700">ARM</div>
+            <div class="expertise-card p-12 flex flex-col items-center text-center">
+                <h2 class="text-4xl font-bold mb-4">Hardware.</h2>
+                <p class="text-xl text-gray-500 mb-6">Robotics and AI-integrated hardware solutions.</p>
+                <img src="https://images.unsplash.com" class="mt-auto rounded-xl shadow-lg w-full max-w-xs">
             </div>
         </div>
     </section>
 
-    <!-- Ad Network Premium Section -->
-    <section id="ads" class="py-40 bg-zinc-950/40 border-y border-white/5">
-        <div class="max-w-5xl mx-auto px-8 text-center">
-            <h2 class="text-5xl md:text-7xl font-black mb-8" data-aos="zoom-in">NextMaze <br><span class="opacity-30">Ad Network</span></h2>
-            <p class="text-xl text-zinc-500 mb-16 max-w-2xl mx-auto italic">"Our bots stay 100% free forever, powered by strategic brand growth."</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 border-r border-white/5">
-                    <h4 class="text-blue-500 font-bold mb-2">Embed Footers</h4>
-                    <p class="text-sm opacity-50">Reach thousands every time a song is played.</p>
+    <!-- Section 3: Ad Network (The Dark Feature) -->
+    <section id="ad-network" class="py-32 bg-black text-white px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl md:text-7xl font-bold mb-8">NextMaze <br><span class="text-gray-500">Ad Network.</span></h2>
+            <p class="text-2xl font-light text-gray-400 mb-12">
+                Our bots stay 100% free forever. Powered by a strategic advertising model that helps brands grow.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left border-t border-gray-800 pt-16">
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Embed Footers</h4>
+                    <p class="text-gray-500">Non-intrusive brand presence every time music is played.</p>
                 </div>
-                <div class="p-8 border-r border-white/5">
-                    <h4 class="text-blue-500 font-bold mb-2">Global Broadcast</h4>
-                    <p class="text-sm opacity-50">Send announcements to every connected server.</p>
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Global Broadcast</h4>
+                    <p class="text-gray-500">Send announcements to every server in our network.</p>
                 </div>
-                <div class="p-8">
-                    <h4 class="text-blue-500 font-bold mb-2">Status Ads</h4>
-                    <p class="text-sm opacity-50">Your brand featured in the bot activity status.</p>
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Status Ads</h4>
+                    <p class="text-gray-500">Featured visibility in bot "Watching/Playing" status.</p>
                 </div>
             </div>
-            
-            <a href="https://discord.gg" class="inline-block mt-16 px-12 py-5 bg-blue-600 rounded-full font-bold hover:bg-blue-500 transition shadow-2xl shadow-blue-600/20">Book a Premium Slot</a>
+            <a href="https://discord.gg" class="inline-block mt-16 bg-white text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-200 transition">Contact for Ad Slots</a>
         </div>
     </section>
 
-    <footer class="py-32 text-center">
-        <div class="text-[10px] font-black tracking-[0.5em] opacity-20 mb-8 uppercase">Innovation Meets Functionality</div>
-        <div class="flex justify-center gap-10 opacity-40 text-xs mb-10">
-            <a href="https://discord.gg">DISCORD</a>
-            <a href="#">TERMS</a>
-            <a href="#">PRIVACY</a>
+    <!-- Footer -->
+    <footer class="bg-[#f5f5f7] py-20 px-6 text-[12px] text-gray-500">
+        <div class="max-w-5xl mx-auto border-t border-gray-300 pt-8">
+            <p class="mb-4">1. Pricing and availability vary based on custom production requirements.</p>
+            <p class="mb-8 border-b border-gray-300 pb-4">Copyright © 2026 NextMaze Studio. All rights reserved.</p>
+            <div class="flex space-x-6 uppercase tracking-wider">
+                <a href="https://discord.gg" class="hover:underline">Discord</a>
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Use</a>
+            </div>
         </div>
-        <p class="text-[10px] opacity-20 font-bold tracking-widest">&copy; 2026 NEXTMAZE STUDIO GLOBAL</p>
     </footer>
 
-    <!-- Animations Library -->
-    <script src="https://unpkg.com"></script>
-    <script>AOS.init();</script>
 </body>
 </html>
