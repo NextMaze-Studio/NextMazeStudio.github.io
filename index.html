@@ -8,187 +8,133 @@
     <style>
         @import url('https://fonts.googleapis.com');
         
-        :root {
-            --accent: #22c55e;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.08);
-        }
-
-        body { 
-            background: #000; 
-            color: #fff; 
-            font-family: 'Inter', sans-serif; 
-            overflow-x: hidden; 
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-        }
+        body { background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
         
-        /* Enhanced Glassmorphism */
+        /* Mobile-optimized glassmorphism */
         .liquid-glass {
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Mobile specific hover/active states */
-        .liquid-glass:active {
-            transform: scale(0.98);
-            border-color: var(--accent);
-            background: rgba(34, 197, 94, 0.05);
+        /* Improved touch feedback for mobile */
+        @media (hover: hover) {
+            .liquid-glass:hover { transform: scale(1.02); background: rgba(255, 255, 255, 0.05); border-color: rgba(34, 197, 94, 0.4); }
         }
+        .liquid-glass:active { transform: scale(0.98); background: rgba(34, 197, 94, 0.05); }
 
         .mesh-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 10% 20%, rgba(6, 78, 59, 0.15) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 80%, rgba(34, 197, 94, 0.1) 0%, transparent 40%);
-            z-index: -1;
+            background: radial-gradient(at 0% 0%, #0d1a12 0, transparent 50%), 
+                        radial-gradient(at 100% 100%, #064e3b 0, transparent 50%);
+            z-index: -1; filter: blur(80px); opacity: 0.7;
         }
 
+        /* Responsive typography */
         .text-hero { 
-            letter-spacing: -0.04em; 
-            line-height: 1; 
+            letter-spacing: -0.05em; 
+            line-height: 0.95; 
+            font-size: clamp(3.5rem, 12vw, 8rem);
         }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
-
-        @media (max-width: 640px) {
-            .text-hero { font-size: 3.5rem !important; }
-            .section-padding { padding-top: 5rem; padding-bottom: 5rem; }
-        }
+        
+        .accent-green { color: #22c55e; }
+        .bg-accent-green { background-color: #22c55e; }
+        
+        /* Hide scrollbar but keep functionality */
+        ::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body class="antialiased">
     <div class="mesh-bg"></div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 bg-black/60 backdrop-blur-xl border-b border-white/5 py-4 px-6 flex justify-between items-center">
+    <nav class="fixed w-full z-50 top-0 bg-black/60 backdrop-blur-xl border-b border-white/5 py-4 px-6 md:px-12 flex justify-between items-center">
         <div class="flex items-center gap-3">
-            <div class="w-8 h-8 bg-accent-green rounded-lg flex items-center justify-center overflow-hidden">
-                <!-- Replace with your actual logo img tag -->
-                <img src="REPLACE_WITH_LOGO_URL" alt="N" class="object-contain w-full h-full">
-            </div>
-            <span class="font-black text-lg tracking-tighter uppercase">NextMaze</span>
+            <img src="REPLACE_WITH_DIRECT_LOGO_URL" alt="" class="h-8 md:h-10 object-contain">
+            <span class="font-black text-lg md:text-xl tracking-tighter uppercase">NextMaze <span class="font-light opacity-40 hidden sm:inline">Studio</span></span>
         </div>
-        <a href="https://discord.gg" class="bg-white text-black px-5 py-2 rounded-full text-[10px] font-black tracking-widest hover:bg-green-500 hover:text-white transition-all duration-300">GET STARTED</a>
+        <a href="https://discord.gg" target="_blank" class="bg-white text-black px-5 py-2 rounded-full text-[10px] font-bold tracking-widest hover:scale-105 active:scale-95 transition">GET STARTED</a>
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-12">
-        <div class="inline-flex items-center gap-2 px-4 py-2 liquid-glass rounded-full text-[9px] font-bold tracking-[0.3em] text-green-400 uppercase mb-6 animate-pulse">
-            <span class="w-2 h-2 bg-green-500 rounded-full"></span> Official Production House
-        </div>
-        
-        <h1 class="text-6xl md:text-[120px] font-black text-hero mb-6">
-            Creativity <br>
-            <span class="text-zinc-600">meets</span> <br>
-            <span class="text-white">Function.</span>
-        </h1>
-        
-        <p class="text-lg md:text-2xl text-zinc-400 max-w-2xl font-medium mb-10 leading-snug">
-            Bridging high-end engineering with stunning visual design for the next generation of digital products.
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-28">
+        <div class="inline-block px-5 py-2 liquid-glass rounded-full text-[9px] font-bold tracking-[0.3em] accent-green uppercase mb-8 border-green-500/20">Official Production House</div>
+        <h1 class="font-black text-hero mb-8">Creativity <br><span class="text-zinc-600">meets</span> <br><span>Function.</span></h1>
+        <p class="text-lg md:text-2xl text-zinc-400 max-w-2xl font-medium mb-10 leading-relaxed">
+            Professional digital production bridging the gap between <span class="text-white">high-end engineering</span> and <span class="text-white">stunning design.</span>
         </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md">
-            <a href="#expertise" class="flex-1 px-8 py-5 bg-white text-black font-bold rounded-2xl text-center active:scale-95 transition-transform">Explore Services</a>
-            <a href="https://discord.gg" class="flex-1 px-8 py-5 liquid-glass font-bold rounded-2xl text-center active:scale-95 transition-transform">Join Discord</a>
-        </div>
-        
-        <div class="mt-16 animate-bounce opacity-20">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        <div class="flex flex-col sm:flex-row gap-4 w-full max-w-sm sm:max-w-lg justify-center">
+            <a href="#expertise" class="px-10 py-5 bg-white text-black font-bold rounded-2xl hover:bg-zinc-200 active:scale-95 transition text-center">View Expertise</a>
+            <a href="https://discord.gg" target="_blank" class="px-10 py-5 liquid-glass font-bold rounded-2xl active:scale-95 transition text-center border-white/10">Join Discord</a>
         </div>
     </section>
 
     <!-- Expertise Section -->
-    <section id="expertise" class="section-padding py-24 px-6 max-w-7xl mx-auto">
-        <div class="flex flex-col items-center mb-16">
-            <h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-4 text-center">Core Expertise.</h2>
-            <div class="h-1 w-20 bg-green-500 rounded-full"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="liquid-glass p-8 md:p-12 group">
-                <div class="w-12 h-12 mb-6 rounded-xl bg-green-500/10 flex items-center justify-center text-green-500 group-hover:bg-green-500 group-hover:text-black transition-all">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                </div>
-                <h3 class="text-2xl font-bold mb-3">Software & Web</h3>
-                <p class="text-zinc-400 leading-relaxed">Custom Web Apps, Dev Tools, and high-performance Patch Files built for stability.</p>
+    <section id="expertise" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-6xl font-black mb-12 text-center tracking-tighter">🛠 Core Expertise.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <div class="liquid-glass p-8 md:p-12">
+                <div class="text-green-500 mb-4 text-2xl">⚡</div>
+                <h3 class="text-2xl md:text-3xl font-bold mb-3 accent-green">Software & Web</h3>
+                <p class="text-zinc-400 text-sm md:text-base">Custom Web Apps, Dev Tools, and high-performance Patch Files engineered for reliability.</p>
             </div>
-
-            <div class="liquid-glass p-8 md:p-12 group">
-                <div class="w-12 h-12 mb-6 rounded-xl bg-zinc-500/10 flex items-center justify-center text-zinc-300 group-hover:bg-white group-hover:text-black transition-all">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                </div>
-                <h3 class="text-2xl font-bold mb-3">Automation</h3>
-                <p class="text-zinc-400 leading-relaxed">Discord & Telegram bots and specialized AI integrations to put your workflow on autopilot.</p>
+            <div class="liquid-glass p-8 md:p-12">
+                <div class="text-zinc-400 mb-4 text-2xl">🤖</div>
+                <h3 class="text-2xl md:text-3xl font-bold mb-3">Automation</h3>
+                <p class="text-zinc-400 text-sm md:text-base">Bespoke Discord & Telegram Bots, AI agents, and smart security automations.</p>
             </div>
-
-            <div class="liquid-glass p-8 md:p-12 group">
-                <div class="w-12 h-12 mb-6 rounded-xl bg-zinc-500/10 flex items-center justify-center text-zinc-300 group-hover:bg-white group-hover:text-black transition-all">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                </div>
-                <h3 class="text-2xl font-bold mb-3">Creative Design</h3>
-                <p class="text-zinc-400 leading-relaxed">High-CTR Thumbnails, Branding Assets, and 3D Modeling that captures attention.</p>
+            <div class="liquid-glass p-8 md:p-12">
+                <div class="text-zinc-400 mb-4 text-2xl">🎨</div>
+                <h3 class="text-2xl md:text-3xl font-bold mb-3">Creative Design</h3>
+                <p class="text-zinc-400 text-sm md:text-base">High-CTR Thumbnails, Branding, GFX, and high-fidelity 3D Modeling.</p>
             </div>
-
-            <div class="liquid-glass p-8 md:p-12 group">
-                <div class="w-12 h-12 mb-6 rounded-xl bg-green-500/10 flex items-center justify-center text-green-500 group-hover:bg-green-500 group-hover:text-black transition-all">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
-                </div>
-                <h3 class="text-2xl font-bold mb-3">Hardware</h3>
-                <p class="text-zinc-400 leading-relaxed">Robotics and AI hardware solutions for professional-grade production needs.</p>
+            <div class="liquid-glass p-8 md:p-12">
+                <div class="text-green-500 mb-4 text-2xl">⚙️</div>
+                <h3 class="text-2xl md:text-3xl font-bold mb-3 accent-green">Hardware</h3>
+                <p class="text-zinc-400 text-sm md:text-base">Robotics and AI-integrated hardware solutions for specialized production.</p>
             </div>
         </div>
     </section>
 
     <!-- Ad Network Section -->
-    <section class="py-24 bg-zinc-950/50 border-y border-white/5 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-            <div class="w-full lg:w-1/2">
-                <h2 class="text-5xl font-black tracking-tighter mb-6 leading-none">
-                    NextMaze <br>
-                    <span class="text-green-500">Ad Network.</span>
-                </h2>
-                <p class="text-zinc-400 text-lg mb-8">Powering free tools for users through non-intrusive, high-impact brand placements.</p>
-                
-                <div class="grid grid-cols-1 gap-4">
-                    <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-                        <div class="text-green-500 mt-1">✦</div>
-                        <p class="text-sm font-bold uppercase tracking-widest text-zinc-300">Embed Footer Placements</p>
-                    </div>
-                    <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-                        <div class="text-green-500 mt-1">✦</div>
-                        <p class="text-sm font-bold uppercase tracking-widest text-zinc-300">Global Network Broadcasts</p>
-                    </div>
+    <section id="ads" class="py-24 bg-zinc-950/40 border-y border-white/5 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div class="flex-1 text-left">
+                <h2 class="text-4xl md:text-7xl font-black tracking-tighter mb-6 leading-tight">📢 Ad <br><span class="opacity-30">Network.</span></h2>
+                <p class="text-lg text-zinc-400 mb-8">We operate a Freemium Bot Network. Our tools stay 100% free for users, powered by strategic growth for partners.</p>
+                <div class="space-y-3 accent-green font-bold tracking-widest text-[9px] uppercase">
+                    <p class="flex items-center gap-2"><span>•</span> Embed Footer Placements</p>
+                    <p class="flex items-center gap-2"><span>•</span> Global Network Broadcasts</p>
+                    <p class="flex items-center gap-2"><span>•</span> Status Advertisements</p>
                 </div>
             </div>
-            
-            <div class="w-full lg:w-1/2 liquid-glass p-10 relative overflow-hidden group">
-                <div class="absolute -top-24 -right-24 w-48 h-48 bg-green-500/10 blur-[80px]"></div>
-                <h3 class="text-xl font-bold mb-2 italic opacity-60">MazeCloud Music</h3>
-                <p class="text-2xl font-medium mb-8">Our bots stay free forever, powered by you.</p>
-                <a href="https://discord.gg" class="block w-full py-5 bg-green-500 text-black text-center rounded-2xl font-black text-lg shadow-xl shadow-green-500/20 uppercase tracking-tighter active:scale-95 transition-all">Book Ad Slots</a>
+            <div class="w-full lg:flex-1 liquid-group">
+                <div class="liquid-glass p-8 md:p-12 border-green-500/20 text-center relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-green-500/10 blur-3xl rounded-full"></div>
+                    <h3 class="text-xl font-bold mb-4 italic opacity-80 uppercase tracking-widest">MazeCloud Music</h3>
+                    <p class="text-zinc-400 mb-8 text-sm leading-relaxed">"Our bots stay free forever, supported by our premium partners."</p>
+                    <a href="https://discord.gg" target="_blank" class="block w-full py-4 bg-accent-green text-black rounded-2xl font-black text-sm hover:opacity-90 active:scale-95 transition shadow-2xl shadow-green-500/20 uppercase tracking-widest">Book Ad Slots</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="py-32 px-6">
-        <div class="liquid-glass max-w-4xl mx-auto p-12 md:p-20 text-center border-green-500/20">
-            <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tighter">Ready to Build?</h2>
-            <p class="text-zinc-400 mb-10 text-lg">Join our community and open a ticket to start your project.</p>
-            <a href="https://discord.gg" class="inline-block w-full sm:w-auto px-12 py-6 bg-white text-black font-black text-xl rounded-full hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-white/10">JOIN DISCORD</a>
+    <!-- Final Call to Action -->
+    <section class="py-32 px-6 text-center">
+        <h2 class="text-4xl md:text-7xl font-black tracking-tighter mb-10">Connect.</h2>
+        <div class="liquid-glass max-w-3xl mx-auto p-10 md:p-16 border-green-500/10">
+            <h3 class="text-2xl md:text-3xl font-bold mb-4 uppercase tracking-tighter">Official Discord</h3>
+            <p class="text-zinc-500 text-sm md:text-lg mb-10 max-w-md mx-auto">Open a ticket in <span class="text-white">#create-order</span> to start your journey with NextMaze.</p>
+            <a href="https://discord.gg" target="_blank" class="inline-block px-10 py-5 bg-white text-black font-black text-lg rounded-full hover:scale-105 active:scale-95 transition shadow-2xl shadow-white/10">JOIN COMMUNITY</a>
         </div>
     </section>
 
-    <footer class="py-12 text-center">
-        <p class="text-[9px] font-black tracking-[0.8em] mb-4 text-zinc-500 uppercase">Innovation • Engineering • Design</p>
-        <p class="text-[9px] font-medium text-zinc-600">&copy; 2026 NEXTMAZE STUDIO GLOBAL.</p>
+    <footer class="py-12 text-center opacity-30">
+        <p class="text-[9px] font-black tracking-[0.5em] mb-4 uppercase">Innovation • Engineering • Design</p>
+        <p class="text-[9px] font-bold">&copy; 2026 NEXTMAZE STUDIO GLOBAL.</p>
     </footer>
 
 </body>
