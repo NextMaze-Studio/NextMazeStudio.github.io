@@ -1,154 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextMaze Studio | Professional Production</title>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextMaze Studio | Official</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com');
+        body { background: #000; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; overflow-x: hidden; }
         
-        body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
-            background: #fff; 
-            color: #000; 
-            scroll-behavior: smooth; 
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 40px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         }
+        .liquid-glass:hover { transform: scale(1.02); background: rgba(255, 255, 255, 0.06); }
 
-        /* The Classic Apple Blur */
-        .apple-nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
+        .mesh-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(at 0% 0%, #1e3a8a 0, transparent 50%), 
+                        radial-gradient(at 100% 100%, #581c87 0, transparent 50%);
+            z-index: -1; filter: blur(100px); opacity: 0.4;
         }
-
-        /* Large Product-Style Typography */
-        .hero-title {
-            letter-spacing: -0.05em;
-            line-height: 1.05;
-        }
-
-        /* Glass Cards for Expertise */
-        .expertise-card {
-            background: #f5f5f7;
-            border-radius: 30px;
-            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-            overflow: hidden;
-        }
-        .expertise-card:hover {
-            transform: scale(1.02);
-        }
-
-        .btn-link {
-            color: #0066cc;
-            font-weight: 500;
-            font-size: 1.25rem;
-        }
-        .btn-link:hover { text-decoration: underline; }
+        
+        h1, h2 { letter-spacing: -0.05em; }
     </style>
 </head>
-<body class="antialiased">
+<body>
+    <div class="mesh-bg"></div>
 
-    <!-- Global Nav -->
-    <nav class="fixed w-full z-50 top-0 apple-nav border-b border-gray-200">
-        <div class="max-w-[1000px] mx-auto px-6 flex justify-between items-center h-12 text-[12px] font-normal tracking-tight">
-            <span class="font-bold text-lg">NextMaze</span>
-            <div class="space-x-8 opacity-80 hidden md:flex">
-                <a href="#expertise" class="hover:text-blue-600 transition">Expertise</a>
-                <a href="#ad-network" class="hover:text-blue-600 transition">Ad Network</a>
-                <a href="https://discord.gg" class="hover:text-blue-600 transition">Support</a>
-            </div>
-            <a href="https://discord.gg" class="bg-black text-white px-3 py-1 rounded-full text-[11px] font-medium">Join</a>
-        </div>
+    <nav class="fixed w-full z-50 top-0 bg-black/40 backdrop-blur-xl border-b border-white/5 py-4 px-8 flex justify-between items-center">
+        <span class="font-black text-xl tracking-tighter">NEXTMAZE</span>
+        <a href="https://discord.gg" class="bg-white text-black px-6 py-2 rounded-full text-xs font-bold hover:scale-105 transition">START A PROJECT</a>
     </nav>
 
-    <!-- Section 1: The Masterbrand -->
-    <section class="pt-32 pb-20 text-center px-6">
-        <h1 class="hero-title text-6xl md:text-[88px] font-bold mb-4">NextMaze Studio.</h1>
-        <p class="text-2xl md:text-3xl font-medium text-gray-500 mb-8 max-w-3xl mx-auto">
-            High-end engineering meets stunning visual design.
-        </p>
-        <div class="flex justify-center space-x-8 mb-12">
-            <a href="https://discord.gg" class="btn-link">Start a project ></a>
-            <a href="#expertise" class="btn-link">View expertise ></a>
-        </div>
-        <!-- High Quality Image Placeholder -->
-        <div class="max-w-5xl mx-auto px-4">
-             <img src="https://images.unsplash.com" 
-                  class="rounded-3xl shadow-2xl w-full">
-        </div>
-    </section>
-
-    <!-- Section 2: Core Expertise (The 2x2 Grid) -->
-    <section id="expertise" class="py-20 px-6 max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Software -->
-            <div class="expertise-card p-12 flex flex-col items-center text-center">
-                <h2 class="text-4xl font-bold mb-4">Software.</h2>
-                <p class="text-xl text-gray-500 mb-6">Custom Web Apps, Dev Tools, and detailed Install Guides.</p>
-                <img src="https://images.unsplash.com" class="mt-auto rounded-xl shadow-lg w-full max-w-xs">
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
+        <h1 class="text-6xl md:text-[100px] font-black leading-[0.9] mb-8">Creativity meets <br><span class="text-blue-500">Functionality.</span></h1>
+        <p class="text-xl md:text-2xl text-zinc-400 max-w-3xl font-medium mb-12">NextMaze Studio is a professional digital production house bridging the gap between high-end engineering and stunning visual design.</p>
+        
+        <div class="grid md:grid-cols-2 gap-6 max-w-6xl w-full">
+            <div class="liquid-glass p-12 text-left">
+                <h3 class="text-3xl font-bold mb-4">We Make.</h3>
+                <p class="text-zinc-500 leading-relaxed">From high-performance software and AI-driven automation to immersive 3D modeling and robotics. We engineer the future of digital production.</p>
             </div>
-
-            <!-- Automation -->
-            <div class="expertise-card p-12 flex flex-col items-center text-center">
-                <h2 class="text-4xl font-bold mb-4">Automation.</h2>
-                <p class="text-xl text-gray-500 mb-6">Bespoke Discord & Telegram Bots. AI Development.</p>
-                <img src="https://images.unsplash.com" class="mt-auto rounded-xl shadow-lg w-full max-w-xs">
-            </div>
-
-            <!-- Creative -->
-            <div class="expertise-card p-12 flex flex-col items-center text-center">
-                <h2 class="text-4xl font-bold mb-4 text-black">Creative Design.</h2>
-                <p class="text-xl text-gray-500 mb-6">High-CTR Thumbnails, Branding, and 3D Modeling.</p>
-                <img src="https://images.unsplash.com" class="mt-auto rounded-xl shadow-lg w-full max-w-xs">
-            </div>
-
-            <!-- Hardware -->
-            <div class="expertise-card p-12 flex flex-col items-center text-center">
-                <h2 class="text-4xl font-bold mb-4">Hardware.</h2>
-                <p class="text-xl text-gray-500 mb-6">Robotics and AI-integrated hardware solutions.</p>
-                <img src="https://images.unsplash.com" class="mt-auto rounded-xl shadow-lg w-full max-w-xs">
+            <div class="liquid-glass p-12 text-left">
+                <h3 class="text-3xl font-bold mb-4">We Advertise.</h3>
+                <p class="text-zinc-500 leading-relaxed">Our Freemium Bot Network reaches thousands daily. Powerful, non-intrusive brand growth for partners, 100% free services for users.</p>
             </div>
         </div>
     </section>
 
-    <!-- Section 3: Ad Network (The Dark Feature) -->
-    <section id="ad-network" class="py-32 bg-black text-white px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl md:text-7xl font-bold mb-8">NextMaze <br><span class="text-gray-500">Ad Network.</span></h2>
-            <p class="text-2xl font-light text-gray-400 mb-12">
-                Our bots stay 100% free forever. Powered by a strategic advertising model that helps brands grow.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left border-t border-gray-800 pt-16">
-                <div>
-                    <h4 class="font-bold text-xl mb-2">Embed Footers</h4>
-                    <p class="text-gray-500">Non-intrusive brand presence every time music is played.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-xl mb-2">Global Broadcast</h4>
-                    <p class="text-gray-500">Send announcements to every server in our network.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-xl mb-2">Status Ads</h4>
-                    <p class="text-gray-500">Featured visibility in bot "Watching/Playing" status.</p>
-                </div>
-            </div>
-            <a href="https://discord.gg" class="inline-block mt-16 bg-white text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-200 transition">Contact for Ad Slots</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[#f5f5f7] py-20 px-6 text-[12px] text-gray-500">
-        <div class="max-w-5xl mx-auto border-t border-gray-300 pt-8">
-            <p class="mb-4">1. Pricing and availability vary based on custom production requirements.</p>
-            <p class="mb-8 border-b border-gray-300 pb-4">Copyright © 2026 NextMaze Studio. All rights reserved.</p>
-            <div class="flex space-x-6 uppercase tracking-wider">
-                <a href="https://discord.gg" class="hover:underline">Discord</a>
-                <a href="#" class="hover:underline">Privacy Policy</a>
-                <a href="#" class="hover:underline">Terms of Use</a>
-            </div>
-        </div>
+    <footer class="py-20 text-center opacity-30 text-[10px] font-bold tracking-[0.5em]">
+        &copy; 2026 NEXTMAZE STUDIO | BUILT FOR THE FUTURE
     </footer>
-
 </body>
 </html>
